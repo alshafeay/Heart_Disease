@@ -1,0 +1,48 @@
+# =========================================================
+
+# Heart Disease Prediction - Model Evaluation
+
+# =========================================================
+
+This document summarizes the performance of the classification models
+trained to predict the presence of heart disease.
+
+### 1. Baseline Model Performance Comparison
+
+The following models were trained on the feature-selected dataset. The performance was evaluated on the test set (20% of the data).
+
+| **Model**              | **Accuracy** | **Precision** | **Recall** | **F1-Score** | **ROC AUC** |
+| ---------------------- | ------------ | ------------- | ---------- | ------------ | ----------- |
+| Random Forest          | 0.8525       | 0.8438        | 0.8710     | 0.8571       | 0.9211      |
+| Logistic Regression    | 0.8361       | 0.8125        | 0.8387     | 0.8254       | 0.9140      |
+| Support Vector Machine | 0.8361       | 0.8125        | 0.8387     | 0.8254       | 0.9134      |
+| Decision Tree          | 0.7869       | 0.7931        | 0.7419     | 0.7667       | 0.7848      |
+
+**Initial Observation:** The Random Forest classifier showed the best overall performance among the baseline models, particularly in terms of ROC AUC score, indicating a strong ability to distinguish between the two classes.
+
+### 2. Hyperparameter Tuning Results (Random Forest)
+
+We performed hyperparameter tuning using GridSearchCV on the Random Forest model to optimize its performance.
+
+**Baseline Random Forest Model:**
+
+- Accuracy: 0.8525
+- Key Hyperparameters: Default values
+
+**Tuned Random Forest Model:**
+
+- Accuracy: 0.8689
+- Best Hyperparameters Found:
+  - max_depth: 10
+  - max_features: 'sqrt'
+  - min_samples_leaf: 1
+  - min_samples_split: 5
+  - n_estimators: 200
+
+**Improvement:** The tuned model showed a modest but valuable improvement in accuracy and other metrics, confirming the benefits of optimization.
+
+### 3. Final Model Selection
+
+**Selected Model:** Tuned Random Forest Classifier
+
+**Reasoning:** The Random Forest model consistently outperformed other models in baseline tests. After you perform hyperparameter tuning, its performance should be further enhanced, making it the most robust and reliable model for this prediction task. This is the model that was saved as `final_model.pkl` for deployment in the Streamlit web application.

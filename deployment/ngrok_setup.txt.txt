@@ -1,0 +1,19 @@
+# ===================================================
+#  Commands to Deploy the Heart Disease Prediction App
+# ===================================================
+
+# This file is a quick reminder of the steps needed to run the app
+# and make it available online with Ngrok.
+
+# --- STEP 1: Run the Streamlit App ---
+# Open your first terminal, navigate to your main project folder,
+# and run this command:
+
+streamlit run ui/app.py
+
+
+# --- STEP 2: Expose the App with Ngrok ---
+# Open a second, separate terminal and run this command.
+# This creates the public link to your app.
+
+ngrok http 8501
