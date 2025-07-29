@@ -73,7 +73,7 @@ To run this project locally, please follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
+    git clone https://github.com/alshafeay/Heart_Disease.git
     cd Heart_Disease_Project
     ```
 
